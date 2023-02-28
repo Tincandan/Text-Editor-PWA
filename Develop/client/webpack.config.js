@@ -22,11 +22,16 @@ module.exports = () => {
         template: './index.html',
         title: 'Text-Editor-PWA'
       }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Text-Editor-PWA',
-        description: 'A text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.',
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'Takes notes with JavaScript syntax highlighting!',
         background_color: '#F0F8FF',
         theme_color: '#F0F8FF',
         start_url: '/',
